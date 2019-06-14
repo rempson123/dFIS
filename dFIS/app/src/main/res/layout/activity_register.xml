@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_register"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".Register">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+
+                android:id="@+id/txtIL_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="@string/first_name"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_first_name"
+                    android:nextFocusUp="@id/edit_first_name"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_middle_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="@string/middle_name"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_middle_name"
+                    android:nextFocusUp="@id/edit_middle_name"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtIL_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="@string/last_name"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_last_name"
+                    android:nextFocusUp="@id/edit_last_name"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtIL_bdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_birthdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="@string/birthdate"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_birthdate"
+                    android:nextFocusUp="@id/edit_birthdate"
+                    android:onClick="setDate"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radio_group_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        android:layout_marginLeft="@dimen/_2sdp"
+                        android:layout_marginRight="@dimen/_6sdp"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:padding="@dimen/_4sdp"
+                        android:text="@string/gender"
+                        android:textColor="#000000"
+
+                        android:textSize="@dimen/textSize"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:checked="true"
+                        android:text="@string/male"
+                        android:textSize="@dimen/textSize"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/female"
+                        android:textSize="@dimen/textSize"
+                        android:textStyle="bold" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtIL_Mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="Mobile"
+                    android:inputType="phone"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_mobile"
+                    android:nextFocusUp="@id/edit_mobile"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:lines="1"
+
+                    android:nextFocusLeft="@id/edit_email"
+                    android:nextFocusUp="@id/edit_email"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/edit_pass_textinputlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="Password"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_password"
+
+                    android:nextFocusUp="@id/edit_password"
+                    android:padding="@dimen/_4sdp"
+                    android:password="true"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtinput_cpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_confirmpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="Confirm Password"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_confirmpassword"
+                    android:nextFocusUp="@id/edit_confirmpassword"
+                    android:padding="@dimen/_4sdp"
+                    android:password="true"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textViewAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/address"
+                android:textColor="#000000"
+                android:textSize="@dimen/textSize"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_4sdp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_street"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="@string/street"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_street"
+                    android:nextFocusUp="@id/edit_street"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_brgy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:textColorHint="#000">
+
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_barangay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="@string/barangay"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:lines="1"
+                    android:nextFocusLeft="@id/edit_barangay"
+                    android:nextFocusUp="@id/edit_barangay"
+                    android:padding="@dimen/_4sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_7sdp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#000"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:id="@+id/txtinput_city">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_towncity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/town_city"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:background="#00000000"
+                    android:nextFocusUp="@id/edit_towncity"
+                    android:nextFocusLeft="@id/edit_towncity"
+                    android:textSize="@dimen/_7sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:inputType="textCapWords|textCapSentences"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#000"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_zipcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/zipcode"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:background="#00000000"
+
+                    android:nextFocusUp="@id/edit_zipcode"
+                    android:nextFocusLeft="@id/edit_zipcode"
+                    android:textSize="@dimen/_7sdp"
+                    android:padding="@dimen/_4sdp"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#000"
+                android:background="@drawable/edit_background"
+                android:paddingTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp">
+
+                <com.geodata.dfis.Tools.ClearableEditText
+                    android:id="@+id/edit_province"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/province"
+                    android:lines="1"
+                    android:background="#00000000"
+
+                    android:singleLine="true"
+                    android:nextFocusUp="@id/edit_province"
+                    android:nextFocusLeft="@id/edit_province"
+                    android:textSize="@dimen/_7sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:inputType="textCapWords|textCapSentences"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

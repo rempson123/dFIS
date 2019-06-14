@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">dFIS</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //
+    <string name="title_activity_maps">Map</string>
+
+    <string name="sosimage">desc</string>
+    <string name="emergency_call">Emergency Call</string>
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="gender">Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="address">Address</string>
+    <string name="province">Province</string>
+    <string name="zipcode">ZipCode</string>
+    <string name="town_city">Town/City</string>
+    <string name="barangay">Barangay</string>
+    <string name="street">Street</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="report_incident">Report Incident</string>
+    <string name="cancel">Cancel</string>
+    <string name="reportincident">Report Incident</string>
+    <string name="imageview_incident">imageview_incident</string>
+    <string name="title_activity_maps2">Map</string>
+
+    <string name="register"><u>Register here</u></string>
+</resources>

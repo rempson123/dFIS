@@ -1,0 +1,363 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:padding="10dp"
+            android:rowCount="3">
+            <!-- Row 1-->
+
+            <!-- pic 1-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_road"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/color_background"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        android:scaleType="fitXY"
+                        android:tint="@color/color_tint_drawable"
+                        android:src="@drawable/ic_road" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:text="Road"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- end pic 1-->
+
+            <!-- pic 2-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_bridge"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/color_background"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        android:scaleType="fitXY"
+                        android:tint="@color/color_tint_drawable"
+                        android:src="@drawable/ic_bridge" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:text="Bridge"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!--end pic 2-->
+
+            <!-- pic 3-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_electricity"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/color_background"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        android:padding="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:tint="@color/color_tint_drawable"
+                        android:src="@drawable/ic_transformer" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:text="Electricity"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- end pic 3-->
+
+            <!-- pic 4-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_sewage"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/color_background"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        android:padding="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:tint="@color/color_tint_drawable"
+                        android:src="@drawable/ic_sewage" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:text="Sewage"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- end pic 4-->
+
+            <!-- pic 5-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_water"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/color_background"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        android:padding="@dimen/_8sdp"
+                        android:scaleType="fitXY"
+                        android:tint="@color/color_tint_drawable"
+                        android:src="@drawable/ic_water" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:text="Water"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- end pic 5-->
+
+            <!-- pic 6-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_tunnel"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/color_background"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        android:scaleType="fitXY"
+                        android:padding="@dimen/_10sdp"
+                        android:tint="@color/color_tint_drawable"
+                        android:src="@drawable/ic_tunnel" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:text="Tunnel"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- end pic 6-->
+
+            <!-- pic 7-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_transit"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/color_background"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        android:scaleType="fitXY"
+                        android:tint="@color/color_tint_drawable"
+                        android:src="@drawable/ic_masstransit" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:text="Mass Transit"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- end pic 7-->
+
+            <!-- pic 8-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/btn_communication"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/color_background"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        android:padding="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:tint="@color/color_tint_drawable"
+                        android:src="@drawable/ic_communication" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:text="Communication"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- end pic 8-->
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

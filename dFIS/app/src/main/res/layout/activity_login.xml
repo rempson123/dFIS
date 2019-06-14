@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/difr_login_logo"
+            android:tint="@color/color_tint_drawable" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_3sdp"
+        >
+
+        <EditText
+            android:id="@+id/edtxtUsername"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/login_bg"
+            android:drawableTint="@color/color_tint_drawable"
+            android:drawableStart="@drawable/ic_user"
+            android:drawablePadding="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:hint="Enter email address"
+            android:paddingLeft="@dimen/_3sdp"
+            android:paddingRight="@dimen/_3sdp"
+            android:textSize="@dimen/_8sdp" />
+
+        <EditText
+            android:id="@+id/edtxtPassword"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/login_bg"
+            android:drawableTint="@color/color_tint_drawable"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/_3sdp"
+            android:paddingRight="@dimen/_3sdp"
+            android:textSize="@dimen/_8sdp" />
+
+        <Button
+            android:id="@+id/email_sign_in_button"
+            style="?android:textAppearanceSmall"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="btn_login101"
+            android:text="LOG IN"
+            android:textColor="#ffff"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:gravity="center"
+            android:id="@+id/tv_register"
+            android:text="@string/register" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
