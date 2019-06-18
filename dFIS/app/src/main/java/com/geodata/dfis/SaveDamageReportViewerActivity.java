@@ -94,16 +94,6 @@ public class SaveDamageReportViewerActivity extends AppCompatActivity {
         for (DamageReport damageReport : mDamageReports) {
 
             byte[] recordImage = damageReport.getImagePic();
-            Bitmap imageDamage = BitmapFactory.decodeByteArray(recordImage, 0, recordImage.length);
-
-            imageViewDamage.setImageBitmap(imageDamage);
-            textViewFullNameSave.setText(damageReport.getFullName());
-            textViewAddressSave.setText(damageReport.getAddress());
-            textViewContactNoSave.setText(damageReport.getContactNo());
-            textViewDamageIdSave.setText(damageReport.getDamageId());
-            textViewDamageTypeSave.setText(damageReport.getDamageType());
-            textViewDateAndTimeSave.setText(damageReport.getDateAndTime());
-            editTextDescriptionSave.setText(damageReport.getDescription());
 
             String fullname = damageReport.getFullName();
             String damageid = damageReport.getDamageId();
