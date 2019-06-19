@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         myRoomDatabase = Room.databaseBuilder(getApplicationContext(), MyRoomDatabase.class, "dFIS").allowMainThreadQueries().build();
-
+        //asd
         editUsername = (EditText) findViewById(R.id.edtxtUsername);
         editPassword = (EditText) findViewById(R.id.edtxtPassword);
         textViewRegister = findViewById(R.id.tv_register);

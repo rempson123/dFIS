@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\jrvicedo.GEODATA\Documents\GitHub\dFIS\dFIS\app\app.iml" filepath="C:\Users\jrvicedo.GEODATA\Documents\GitHub\dFIS\dFIS\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dFIS.iml" filepath="$PROJECT_DIR$/dFIS.iml" />
+      <module fileurl="file://C:\Users\jrvicedo.GEODATA\Documents\GitHub\dFIS\dFIS\dFIS.iml" filepath="C:\Users\jrvicedo.GEODATA\Documents\GitHub\dFIS\dFIS\dFIS.iml" />
     </modules>
   </component>
 </project>
