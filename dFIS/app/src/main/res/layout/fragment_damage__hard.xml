@@ -41,7 +41,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:scaleType="fitXY"
-                        android:tint="@color/color_tint_drawable"
+                        android:padding="@dimen/_8sdp"
                         android:src="@drawable/ic_road" />
 
                     <Button
@@ -77,7 +77,6 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:padding="@dimen/_8sdp"
-                        android:tint="@color/color_tint_drawable"
                         android:src="@drawable/ic_bridge" />
 
                     <Button
@@ -113,8 +112,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:padding="@dimen/_10sdp"
-                        android:tint="@color/color_tint_drawable"
-                        android:src="@drawable/ic_railway_line" />
+                        android:src="@drawable/ic_railroad" />
 
                     <Button
                         android:layout_width="match_parent"
@@ -149,7 +147,6 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:padding="@dimen/_10sdp"
-                        android:tint="@color/color_tint_drawable"
                         android:src="@drawable/ic_airport" />
 
                     <Button
@@ -185,7 +182,6 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:padding="@dimen/_10sdp"
-                        android:tint="@color/color_tint_drawable"
                         android:src="@drawable/ic_tunnel" />
 
                     <Button
@@ -221,8 +217,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:padding="@dimen/_10sdp"
-                        android:tint="@color/color_tint_drawable"
-                        android:src="@drawable/ic_water" />
+                        android:src="@drawable/ic_dam" />
 
                     <Button
                         android:layout_width="match_parent"
@@ -257,7 +252,6 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:padding="@dimen/_10sdp"
-                        android:tint="@color/color_tint_drawable"
                         android:src="@drawable/ic_park" />
 
                     <Button
@@ -293,7 +287,6 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:padding="@dimen/_10sdp"
-                        android:tint="@color/color_tint_drawable"
                         android:src="@drawable/ic_transmission_tower" />
 
                     <Button
@@ -329,7 +322,6 @@
                         android:layout_height="0dp"
                         android:layout_weight="8"
                         android:padding="@dimen/_10sdp"
-                        android:tint="@color/color_tint_drawable"
                         android:src="@drawable/ic_utility" />
 
                     <Button

@@ -38,7 +38,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="8"
                     android:padding="@dimen/_8sdp"
-                    android:tint="@color/color_tint_drawable"
                     android:src="@drawable/ic_network_infrastracture" />
 
                 <Button
@@ -75,7 +74,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="8"
                     android:padding="@dimen/_8sdp"
-                    android:tint="@color/color_tint_drawable"
                     android:src="@drawable/ic_it_infrastracture" />
 
                 <Button
@@ -112,7 +110,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="8"
                     android:padding="@dimen/_10sdp"
-                    android:tint="@color/color_tint_drawable"
                     android:src="@drawable/ic_connection_hub" />
 
                 <Button

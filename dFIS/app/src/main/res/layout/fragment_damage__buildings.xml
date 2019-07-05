@@ -37,7 +37,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="8"
                     android:padding="@dimen/_8sdp"
-                    android:tint="@color/color_tint_drawable"
                     android:src="@drawable/ic_auditorium" />
 
                 <Button
@@ -74,8 +73,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="8"
                     android:padding="@dimen/_8sdp"
-                    android:tint="@color/color_tint_drawable"
-                    android:src="@drawable/ic_streets" />
+                    android:src="@drawable/ic_street" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -110,7 +108,6 @@
                     android:layout_height="0dp"
                     android:layout_weight="8"
                     android:padding="@dimen/_10sdp"
-                    android:tint="@color/color_tint_drawable"
                     android:src="@drawable/ic_lights" />
 
                 <Button
@@ -147,7 +144,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="8"
                     android:padding="@dimen/_10sdp"
-                    android:tint="@color/color_tint_drawable"
+
                     android:src="@drawable/ic_utility" />
 
                 <Button
