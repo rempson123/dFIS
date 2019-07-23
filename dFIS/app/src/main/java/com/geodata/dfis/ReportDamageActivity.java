@@ -1,17 +1,16 @@
 package com.geodata.dfis;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.Base64;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,8 +22,6 @@ import com.geodata.dfis.Retrofit.APIIClient;
 import com.geodata.dfis.Retrofit.APIInterface;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import retrofit2.Call;
@@ -41,13 +38,14 @@ public class ReportDamageActivity extends AppCompatActivity {
 
     APIInterface apiInterface;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_damage);
 
         apiInterface = APIIClient.getClient().create(APIInterface.class);
+
+        setTitle("Report");
 
         Imageview_damage = findViewById(R.id.Imageview_damage);
         address = findViewById(R.id.address);
@@ -182,19 +180,46 @@ public class ReportDamageActivity extends AppCompatActivity {
         Toast.makeText(this, "Report saved", Toast.LENGTH_SHORT).show();
     }
 
-    public void btn_send(View view) {
-        sendDamage();
-        Intent intent = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
-        startActivity(intent);
-        finish();
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_report_damage, menu);
+        return true;
     }
 
-    public void btn_save(View view) {
-        saveReport();
-        Intent intent = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
-        startActivity(intent);
-        finish();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        switch (item.getItemId()) {
+            case R.id.action_send:
+
+                sendDamage();
+                Intent intentSend = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
+                startActivity(intentSend);
+                finish();
+
+                return true;
+
+            case R.id.action_save:
+
+                if (address.getText().toString().trim().equals("")) {
+                    address.setError("Enter an address");
+                    return false;
+                } else if (edit_desc.getText().toString().trim().equals("")) {
+                    edit_desc.setError("Enter a description");
+                    return false;
+                } else {
+                    saveReport();
+                    Intent intentSave = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
+                    startActivity(intentSave);
+                    finish();
+                }
+
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
+
 }
