@@ -19,6 +19,7 @@
 
         <!-- Column 1-->
         <android.support.v7.widget.CardView
+            android:id="@+id/cv_network_infra_soft"
             android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_150sdp"
             android:layout_marginBottom="@dimen/_10sdp"
@@ -55,6 +56,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/cv_it_infra_soft"
             android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_150sdp"
             android:layout_marginBottom="@dimen/_10sdp"
@@ -90,6 +92,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/cv_comm_hubs_soft"
             android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_150sdp"
             android:layout_marginBottom="@dimen/_10sdp"

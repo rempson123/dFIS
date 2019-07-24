@@ -64,9 +64,6 @@ public class ReportDamageActivity extends AppCompatActivity {
 
             Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(cameraIntent, 1);
-
-        } else if (s.equals("2")) {
-
         }
 
         lati = getIntent().getStringExtra("longi");
@@ -93,6 +90,9 @@ public class ReportDamageActivity extends AppCompatActivity {
 
             Drawable pic = new BitmapDrawable(getResources(), photo);
             Imageview_damage.setBackground(pic);
+        } else if (resultCode == RESULT_CANCELED) {
+            ReportDamageActivity.super.onBackPressed();
+            startActivity(new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class));
         }
     }
 

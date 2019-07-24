@@ -180,6 +180,7 @@ public class All extends android.support.v4.app.Fragment implements  View.OnClic
                 startActivity(intent);
 
 
+
             } else {
                 gps.showSettingsAlert();
             }

@@ -22,6 +22,7 @@
 
             <!-- Column 1-->
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_road_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -58,6 +59,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_bridge_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -93,6 +95,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_railroad_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -128,6 +131,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_airport_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -163,6 +167,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_tunnel_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -198,6 +203,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_dams_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -233,6 +239,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_park_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -268,6 +275,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_transmission_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
@@ -303,6 +311,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cv_public_utility_hard"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_150sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
