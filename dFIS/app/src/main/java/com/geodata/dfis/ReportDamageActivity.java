@@ -1,10 +1,12 @@
 package com.geodata.dfis;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.Base64;
@@ -181,6 +183,30 @@ public class ReportDamageActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+
+        new AlertDialog.Builder(this)
+                .setTitle("Report Creation")
+                .setMessage("Do you want to cancel your report ?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        ReportDamageActivity.super.onBackPressed();
+                        startActivity(new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        return;
+                    }
+                })
+                .show();
+
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_report_damage, menu);
@@ -193,10 +219,18 @@ public class ReportDamageActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_send:
 
-                sendDamage();
-                Intent intentSend = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
-                startActivity(intentSend);
-                finish();
+                if (address.getText().toString().trim().equals("")) {
+                    address.setError("Enter an address");
+                    return false;
+                } else if (edit_desc.getText().toString().trim().equals("")) {
+                    edit_desc.setError("Enter a description");
+                    return false;
+                } else {
+                    sendDamage();
+                    Intent intentSend = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
+                    startActivity(intentSend);
+                    finish();
+                }
 
                 return true;
 
@@ -215,9 +249,10 @@ public class ReportDamageActivity extends AppCompatActivity {
                     finish();
                 }
 
-
                 return true;
+
             default:
+
                 return super.onOptionsItemSelected(item);
         }
     }

@@ -40,8 +40,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="8"
-                        android:scaleType="fitXY"
                         android:padding="@dimen/_10sdp"
+                        android:scaleType="fitXY"
                         android:src="@drawable/ic_road" />
 
                     <Button
@@ -81,8 +81,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="8"
-                        android:scaleType="fitXY"
                         android:padding="@dimen/_10sdp"
+                        android:scaleType="fitXY"
                         android:src="@drawable/ic_bridge" />
 
                     <Button
@@ -96,6 +96,7 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/colorWhite" />
+
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -247,8 +248,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="8"
-                        android:scaleType="fitXY"
                         android:padding="@dimen/_10sdp"
+                        android:scaleType="fitXY"
                         android:src="@drawable/ic_tunnel" />
 
                     <Button
@@ -289,8 +290,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="8"
-                        android:scaleType="fitXY"
                         android:padding="@dimen/_10sdp"
+                        android:scaleType="fitXY"
                         android:src="@drawable/ic_masstransit" />
 
                     <Button

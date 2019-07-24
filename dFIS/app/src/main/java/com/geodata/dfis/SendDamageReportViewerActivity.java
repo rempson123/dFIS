@@ -41,6 +41,8 @@ public class SendDamageReportViewerActivity extends AppCompatActivity {
         textViewDateAndTimeSend = findViewById(R.id.tv_date_and_time_send);
         textViewDescriptionSend = findViewById(R.id.tv_desc_send);
 
+        setTitle("Sent Reports");
+
         String damageReportNumber = getIntent().getStringExtra("dmgReportNoSend");
 
         mDamageReports = LoginActivity.myRoomDatabase.daoDFIS().getDamageReport(damageReportNumber);

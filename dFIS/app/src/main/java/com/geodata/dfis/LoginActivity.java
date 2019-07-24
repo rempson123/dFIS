@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             //Snackbar.make(view, "Log-in succesfully", Snackbar.LENGTH_LONG).show();
             Intent i = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
             startActivity(i);
+            finish();
         } else {
             Toast.makeText(this, "Unregistered account or Incorrect credentials", Toast.LENGTH_SHORT).show();
         }

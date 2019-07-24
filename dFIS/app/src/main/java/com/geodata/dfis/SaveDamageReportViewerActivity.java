@@ -6,6 +6,9 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +40,6 @@ public class SaveDamageReportViewerActivity extends AppCompatActivity {
     EditText editTextDescriptionSave;
     List<DamageReport> mDamageReports;
     APIInterface apiInterface;
-    Button buttonSaveSend;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,7 +47,6 @@ public class SaveDamageReportViewerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_save_damage_report_viewer);
 
         apiInterface = APIIClient.getClient().create(APIInterface.class);
-        buttonSaveSend = findViewById(R.id.btn_save_send);
         textViewDamageReportNo = findViewById(R.id.tv_dmgReportNo);
 
         imageViewDamage = findViewById(R.id.imgV_damage);
@@ -56,6 +57,8 @@ public class SaveDamageReportViewerActivity extends AppCompatActivity {
         textViewDamageTypeSave = findViewById(R.id.tv_damage_type_save);
         textViewDateAndTimeSave = findViewById(R.id.tv_date_and_time_save);
         editTextDescriptionSave = findViewById(R.id.et_desc_save);
+
+        setTitle("Draft Reports");
 
         String damageReportNumber = getIntent().getStringExtra("dmgReportNoSave");
 
@@ -75,14 +78,6 @@ public class SaveDamageReportViewerActivity extends AppCompatActivity {
             textViewDateAndTimeSave.setText(damageReport.getDateAndTime());
             editTextDescriptionSave.setText(damageReport.getDescription());
         }
-
-        buttonSaveSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendDamageReport();
-            }
-        });
-
 
     }
 
@@ -146,5 +141,36 @@ public class SaveDamageReportViewerActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_report_save_damage, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_send_save:
+
+                if (editTextDescriptionSave.getText().toString().trim().equals("")) {
+                    editTextDescriptionSave.setError("Enter a description");
+                    return false;
+                } else {
+                    sendDamageReport();
+                    Intent intentSend = new Intent(SaveDamageReportViewerActivity.this, NavigationDrawerActivity.class);
+                    startActivity(intentSend);
+                    finish();
+                }
+
+                return true;
+
+            default:
+
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
