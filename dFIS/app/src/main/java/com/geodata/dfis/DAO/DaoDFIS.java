@@ -38,11 +38,11 @@ public interface DaoDFIS {
     @Query("SELECT * FROM DamageReport WHERE id = :id")
     List<DamageReport> getDamageReport(String id);
 
-    @Query("select * from  DamageReport where STATUS ='SAVE' ORDER BY id DESC,null")
-    Cursor getDamageSave();
+    @Query("select * from  DamageReport where STATUS ='SAVE' ORDER BY id DESC")
+    List<DamageReport> getDamageSave();
 
-    @Query("select * from  DamageReport where STATUS ='SENT' ORDER BY id DESC,null")
-    Cursor getDamageSend();
+    @Query("select * from  DamageReport where STATUS ='SENT' ORDER BY id DESC")
+    List<DamageReport> getDamageSend();
 
     @Update
     void updateDamageReport(DamageReport damageReport);

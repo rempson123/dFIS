@@ -1,5 +1,6 @@
 package com.geodata.dfis;
 
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -47,7 +48,12 @@ public class ReportDamageActivity extends AppCompatActivity {
 
         apiInterface = APIIClient.getClient().create(APIInterface.class);
 
-        setTitle("Report");
+        setTitle("Create Report");
+
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         Imageview_damage = findViewById(R.id.Imageview_damage);
         address = findViewById(R.id.address);
@@ -91,8 +97,11 @@ public class ReportDamageActivity extends AppCompatActivity {
             Drawable pic = new BitmapDrawable(getResources(), photo);
             Imageview_damage.setBackground(pic);
         } else if (resultCode == RESULT_CANCELED) {
-            ReportDamageActivity.super.onBackPressed();
-            startActivity(new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class));
+
+            Intent intent = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
+            startActivity(intent);
+            finishAffinity();
+
         }
     }
 
@@ -106,32 +115,32 @@ public class ReportDamageActivity extends AppCompatActivity {
 
         //Toast.makeText(this, imageString, Toast.LENGTH_SHORT).show();
 
-        String fullname1 = txtview_name.getText().toString();
-        String damageid1 = damage_id.getText().toString();
-        String damagetype1 = damage_type.getText().toString();
-        String contactno1 = contact_num.getText().toString();
-        String description1 = edit_desc.getText().toString();
-        String address1 = address.getText().toString();
+        String fullname1 = txtview_name.getText().toString().trim();
+        String damageid1 = damage_id.getText().toString().trim();
+        String damagetype1 = damage_type.getText().toString().trim();
+        String contactno1 = contact_num.getText().toString().trim();
+        String description1 = edit_desc.getText().toString().trim();
+        String address1 = address.getText().toString().trim();
         String xcoor1 = lati;
         String ycoor1 = longi;
-        String dateandtime1 = tv_date.getText().toString();
+        String dateandtime1 = tv_date.getText().toString().trim();
 
         sendReport(fullname1, damageid1, damagetype1, contactno1, description1, address1, xcoor1, ycoor1, imageString, dateandtime1);
 
         DamageReport damageReport = new DamageReport();
 
-        damageReport.setFullName(txtview_name.getText().toString());
-        damageReport.setDamageId(damage_id.getText().toString());
-        damageReport.setDamageType(damage_type.getText().toString());
-        damageReport.setContactNo(contact_num.getText().toString());
-        damageReport.setDescription(edit_desc.getText().toString());
+        damageReport.setFullName(txtview_name.getText().toString().trim());
+        damageReport.setDamageId(damage_id.getText().toString().trim());
+        damageReport.setDamageType(damage_type.getText().toString().trim());
+        damageReport.setContactNo(contact_num.getText().toString().trim());
+        damageReport.setDescription(edit_desc.getText().toString().trim());
         damageReport.setStatus("SENT");
-        damageReport.setAddress(address.getText().toString());
+        damageReport.setAddress(address.getText().toString().trim());
         damageReport.setXCoordinates(lati);
         damageReport.setYCoordinates(longi);
         damageReport.setImagePic(bArray);
         damageReport.setImageString(imageString);
-        damageReport.setDateAndTime(tv_date.getText().toString());
+        damageReport.setDateAndTime(tv_date.getText().toString().trim());
 
         LoginActivity.myRoomDatabase.daoDFIS().addDamageRecord(damageReport);
         Toast.makeText(this, "Report successfully sent", Toast.LENGTH_SHORT).show();
@@ -165,18 +174,18 @@ public class ReportDamageActivity extends AppCompatActivity {
 
         DamageReport damageReport = new DamageReport();
 
-        damageReport.setFullName(txtview_name.getText().toString());
-        damageReport.setDamageId(damage_id.getText().toString());
-        damageReport.setDamageType(damage_type.getText().toString());
-        damageReport.setContactNo(contact_num.getText().toString());
-        damageReport.setDescription(edit_desc.getText().toString());
+        damageReport.setFullName(txtview_name.getText().toString().trim());
+        damageReport.setDamageId(damage_id.getText().toString().trim());
+        damageReport.setDamageType(damage_type.getText().toString().trim());
+        damageReport.setContactNo(contact_num.getText().toString().trim());
+        damageReport.setDescription(edit_desc.getText().toString().trim());
         damageReport.setStatus("SAVE");
-        damageReport.setAddress(address.getText().toString());
+        damageReport.setAddress(address.getText().toString().trim());
         damageReport.setXCoordinates(lati);
         damageReport.setYCoordinates(longi);
         damageReport.setImagePic(bArray);
         damageReport.setImageString(imageString);
-        damageReport.setDateAndTime(tv_date.getText().toString());
+        damageReport.setDateAndTime(tv_date.getText().toString().trim());
 
         LoginActivity.myRoomDatabase.daoDFIS().addDamageRecord(damageReport);
         Toast.makeText(this, "Report saved", Toast.LENGTH_SHORT).show();
@@ -186,14 +195,16 @@ public class ReportDamageActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         new AlertDialog.Builder(this)
-                .setTitle("Report Creation")
+                .setTitle("Create Report")
                 .setMessage("Do you want to cancel your report ?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        ReportDamageActivity.super.onBackPressed();
-                        startActivity(new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class));
+                        Intent intent = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
+                        startActivity(intent);
+                        finishAffinity();
+
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -248,6 +259,31 @@ public class ReportDamageActivity extends AppCompatActivity {
                     startActivity(intentSave);
                     finish();
                 }
+
+                return true;
+
+            case android.R.id.home:
+
+                new AlertDialog.Builder(this)
+                        .setTitle("Create Report")
+                        .setMessage("Do you want to cancel your report ?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                Intent intent = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
+                                startActivity(intent);
+                                finishAffinity();
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                return;
+                            }
+                        })
+                        .show();
 
                 return true;
 

@@ -2,11 +2,8 @@ package com.geodata.dfis;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,7 +31,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         myRoomDatabase = Room.databaseBuilder(getApplicationContext(), MyRoomDatabase.class, "dFIS").allowMainThreadQueries().build();
-        //asdaaaaasdasdsa
+
+        setTitle("");
+
         editUsername = (EditText) findViewById(R.id.edtxtUsername);
         editPassword = (EditText) findViewById(R.id.edtxtPassword);
         textViewRegister = findViewById(R.id.tv_register);

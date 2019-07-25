@@ -107,7 +107,7 @@ public class SaveDamageReportViewerActivity extends AppCompatActivity {
             damageReport1.setDamageId(damageid);
             damageReport1.setDamageType(damagetype);
             damageReport1.setContactNo(contactno);
-            damageReport1.setDescription(description);
+            damageReport1.setDescription(editTextDescriptionSave.getText().toString().trim());
             damageReport1.setAddress(address);
             damageReport1.setStatus("SENT");
             damageReport1.setXCoordinates(xcoor);
@@ -172,5 +172,12 @@ public class SaveDamageReportViewerActivity extends AppCompatActivity {
 
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SaveDamageReportViewerActivity.this, MyReportsActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

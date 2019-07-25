@@ -1,5 +1,6 @@
 package com.geodata.dfis;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -61,6 +62,13 @@ public class SendDamageReportViewerActivity extends AppCompatActivity {
             textViewDateAndTimeSend.setText(damageReport.getDateAndTime());
             textViewDescriptionSend.setText(damageReport.getDescription());
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SendDamageReportViewerActivity.this, MyReportsActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
 

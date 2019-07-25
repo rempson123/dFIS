@@ -67,6 +67,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
                     .setTitle("dFIS")
                     .setMessage("Do you want to close the application ?")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             NavigationDrawerActivity.super.onBackPressed();
@@ -81,7 +82,10 @@ public class NavigationDrawerActivity extends AppCompatActivity
                     .show();
         }
 
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

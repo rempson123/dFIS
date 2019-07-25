@@ -1,17 +1,13 @@
 package com.geodata.dfis.Adapter;
 
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.geodata.dfis.Model.DamageReport;
@@ -24,69 +20,71 @@ import java.util.List;
  * Created by rdulitin on 06/05/2019.
  */
 
-public class DamageReportAdapter extends BaseAdapter {
+public class DamageReportAdapter extends RecyclerView.Adapter<DamageReportAdapter.ViewHolder> {
 
-    private Context mContext;
-    private List<DamageReport> mReports;
+    private static final String TAG = "DamageReportAdapter";
 
+    private List<DamageReport> damageReports = new ArrayList<>();
+    private OnDamageListener mOnDamageListener;
 
-    public DamageReportAdapter(Context mContext, List<DamageReport> mReports) {
-        this.mContext = mContext;
-        this.mReports = mReports;
+    public DamageReportAdapter(List<DamageReport> damageReports, OnDamageListener mOnDamageListener) {
+        this.damageReports = damageReports;
+        this.mOnDamageListener = mOnDamageListener;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_damage_report_item, parent, false);
+        return new ViewHolder(view, mOnDamageListener);
     }
 
     @Override
-    public int getCount() {
-        return mReports.size();
-    }
-    @Override
-    public Object getItem(int position) {
-        return mReports;
-    }
-    @Override
-    public long getItemId(int position) {
-        return 0;
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        byte[] damageImage = damageReports.get(position).getImagePic();
+        Bitmap damageBitmap = BitmapFactory.decodeByteArray(damageImage, 0, damageImage.length);
+        holder.imageViewReport.setImageBitmap(damageBitmap);
+        holder.imageViewReport.setScaleType(ImageView.ScaleType.FIT_XY);
+
+        holder.textViewDamageDate.setText(damageReports.get(position).getDateAndTime());
+        holder.textViewDamageType.setText(damageReports.get(position).getDamageType());
+        holder.textViewDamageAddress.setText(damageReports.get(position).getAddress());
+        holder.textViewDamageDescription.setText(damageReports.get(position).getDescription());
+
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        final viewHolder holder;
+    public int getItemCount() {
+        return damageReports.size();
+    }
 
-        LayoutInflater layoutInflater;
-        if (convertView == null) {
-            layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.report_list_row, null);
-            holder = new viewHolder();
-            holder.imageViewReportedImage = convertView.findViewById(R.id.img_reported_picture);
-            holder.textViewDate = convertView.findViewById(R.id.tv_reported_date);
-            holder.textViewDamageType = convertView.findViewById(R.id.tv_damage_type);
-            holder.textViewAddress = convertView.findViewById(R.id.tv_address);
-            holder.textViewDescription = convertView.findViewById(R.id.tv_description);
-            //holder.inciNo = convertView.findViewById(R.id.inciNo);
-            convertView.setTag(holder);
-        } else {
-            holder = (viewHolder) convertView.getTag();
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        ImageView imageViewReport;
+        TextView textViewDamageDate, textViewDamageType, textViewDamageAddress, textViewDamageDescription;
+
+        public ViewHolder(View itemView, OnDamageListener onDamageListener) {
+            super(itemView);
+            imageViewReport = itemView.findViewById(R.id.imgv_report);
+            textViewDamageDate = itemView.findViewById(R.id.tv_damage_report_date);
+            textViewDamageType = itemView.findViewById(R.id.tv_damage_report_type);
+            textViewDamageAddress = itemView.findViewById(R.id.tv_damage_report_address);
+            textViewDamageDescription = itemView.findViewById(R.id.tv_damage_report_description);
+
+            mOnDamageListener = onDamageListener;
+
+            itemView.setOnClickListener(this);
+
         }
 
-        DamageReport damageReport =  mReports.get(position);
-
-        byte[] recordImage = damageReport.getImagePic();
-        Bitmap bitmap = BitmapFactory.decodeByteArray(recordImage, 0, recordImage.length);
-        holder.imageViewReportedImage.setImageBitmap(bitmap);
-        holder.imageViewReportedImage.setScaleType(ImageView.ScaleType.FIT_XY);
-
-        holder.textViewDate.setText("Date: "+ damageReport.getDateAndTime());
-        holder.textViewDamageType.setText("Type of Damage: " + damageReport.getDamageType());
-        holder.textViewAddress.setText("Address: "+ damageReport.getAddress());
-        holder.textViewDescription.setText("Description: "+ damageReport.getDescription());
-
-        return convertView;
-    }
-    public class viewHolder {
-        ImageView imageViewReportedImage;
-        TextView textViewDate, textViewDamageType, textViewAddress,textViewDescription;
-        //TextView inciNo;
+        @Override
+        public void onClick(View view) {
+            mOnDamageListener.onDamageClick(getAdapterPosition());
+        }
     }
 
-
+    public interface OnDamageListener {
+        void onDamageClick(int position);
+    }
 }
