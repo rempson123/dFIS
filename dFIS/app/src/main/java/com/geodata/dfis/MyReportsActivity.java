@@ -1,24 +1,15 @@
 package com.geodata.dfis;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
-import com.geodata.dfis.Adapter.DamageReportAdapter;
 import com.geodata.dfis.Fragments.DraftsFragment;
 import com.geodata.dfis.Fragments.SentFragment;
-import com.geodata.dfis.Model.DamageReport;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.geodata.dfis.LoginActivity.myRoomDatabase;
 
 public class MyReportsActivity extends AppCompatActivity {
 
@@ -32,15 +23,21 @@ public class MyReportsActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_report);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        if (getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new DraftsFragment()).commit();
+        }
+
+        String sentTabIntent = "sentTab";
+        String sentTab = getIntent().getStringExtra("sentTabFragment");
+
+        if(sentTabIntent.equals(sentTab)){
+            bottomNav.setSelectedItemId(R.id.nav_sent);
         }
 
     }
@@ -81,6 +78,7 @@ public class MyReportsActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(MyReportsActivity.this, NavigationDrawerActivity.class);

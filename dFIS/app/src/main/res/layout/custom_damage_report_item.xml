@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_10sdp"
     app:cardBackgroundColor="@color/colorWhite"
-    app:cardCornerRadius="@dimen/_5sdp"
+
     app:cardElevation="@dimen/_5sdp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/_7sdp">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imgv_report"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:scaleType="fitXY"
@@ -26,103 +24,131 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_damage_report_date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_35sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@color/colorAccent"
-            android:padding="@dimen/_5sdp"
-            android:textColor="@color/colorWhite"
-            app:layout_constraintBottom_toTopOf="@+id/tv_damage_report_type"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.53" />
-
-        <TextView
-            android:id="@+id/tv_damage_report_type"
+            android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Date:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_report" />
+
+        <TextView
+            android:id="@+id/tv_damage_report_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/tv_damage_report_address"
-            app:layout_constraintStart_toEndOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/tv_damage_report_date" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#C0C0C0"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_report" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="Address:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <TextView
             android:id="@+id/tv_damage_report_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#C0C0C0"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/tv_damage_report_date" />
+
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Damage"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintStart_toEndOf="@+id/imgv_report"
+            app:layout_constraintTop_toTopOf="@+id/imgv_report" />
+
+        <TextView
+            android:id="@+id/tv_damage_report_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="TextView"
+            android:textColor="#C0C0C0"
+            app:layout_constraintStart_toEndOf="@+id/imgv_report"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="Description"
+            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toTopOf="@+id/tv_damage_report_description"
-            app:layout_constraintStart_toEndOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/tv_damage_report_type" />
+            app:layout_constraintStart_toEndOf="@+id/imgv_report" />
 
         <TextView
             android:id="@+id/tv_damage_report_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_12sdp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/textView8"
-            app:layout_constraintStart_toEndOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/tv_damage_report_address" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="Damage:"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintStart_toEndOf="@+id/imgv_report"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="Address"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView8"
-            app:layout_constraintStart_toEndOf="@+id/imgv_report"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="Description"
-            android:textStyle="bold"
+            android:textColor="#C0C0C0"
             app:layout_constraintBottom_toBottomOf="@+id/imgv_report"
-            app:layout_constraintStart_toEndOf="@+id/imgv_report"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toEndOf="@+id/imgv_report" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textView22"
+            android:layout_width="@dimen/_155sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="#B0BEC5"
+            app:layout_constraintBottom_toTopOf="@+id/textView19"
+            app:layout_constraintStart_toEndOf="@+id/imgv_report"
+            app:layout_constraintTop_toBottomOf="@+id/tv_damage_report_type" />
+
+        <TextView
+            android:id="@+id/tv_triangle_corner"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_triangle_primary"
+            android:gravity="center_vertical"
+            android:rotation="180"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_report_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="Date:"
-            android:textStyle="bold"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:text="1"
             android:textColor="@color/colorWhite"
-            android:background="@color/colorPrimaryDark"
-            android:padding="@dimen/_5sdp"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintStart_toEndOf="@+id/imgv_report"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="@+id/tv_triangle_corner"
+            app:layout_constraintTop_toTopOf="@+id/tv_triangle_corner" />
 
 
     </android.support.constraint.ConstraintLayout>

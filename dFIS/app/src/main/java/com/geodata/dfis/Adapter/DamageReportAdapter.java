@@ -9,10 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.geodata.dfis.Model.DamageReport;
 import com.geodata.dfis.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +24,7 @@ public class DamageReportAdapter extends RecyclerView.Adapter<DamageReportAdapte
 
     private List<DamageReport> damageReports = new ArrayList<>();
     private OnDamageListener mOnDamageListener;
+
 
     public DamageReportAdapter(List<DamageReport> damageReports, OnDamageListener mOnDamageListener) {
         this.damageReports = damageReports;
@@ -46,11 +45,17 @@ public class DamageReportAdapter extends RecyclerView.Adapter<DamageReportAdapte
         Bitmap damageBitmap = BitmapFactory.decodeByteArray(damageImage, 0, damageImage.length);
         holder.imageViewReport.setImageBitmap(damageBitmap);
         holder.imageViewReport.setScaleType(ImageView.ScaleType.FIT_XY);
-
         holder.textViewDamageDate.setText(damageReports.get(position).getDateAndTime());
         holder.textViewDamageType.setText(damageReports.get(position).getDamageType());
         holder.textViewDamageAddress.setText(damageReports.get(position).getAddress());
         holder.textViewDamageDescription.setText(damageReports.get(position).getDescription());
+        holder.textViewReportNo.setText(String.valueOf(damageReports.get(position).getId()));
+
+        if (position % 2 == 1) {
+            holder.textViewReportTriangleBg.setBackgroundResource(R.drawable.bg_triangle_primary);
+        } else {
+            holder.textViewReportTriangleBg.setBackgroundResource(R.drawable.bg_triangle_accent);
+        }
 
     }
 
@@ -62,20 +67,24 @@ public class DamageReportAdapter extends RecyclerView.Adapter<DamageReportAdapte
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView imageViewReport;
-        TextView textViewDamageDate, textViewDamageType, textViewDamageAddress, textViewDamageDescription;
+        TextView textViewDamageDate, textViewDamageType, textViewDamageAddress, textViewDamageDescription,
+                textViewReportNo, textViewReportTriangleBg;
 
         public ViewHolder(View itemView, OnDamageListener onDamageListener) {
             super(itemView);
+
+
             imageViewReport = itemView.findViewById(R.id.imgv_report);
             textViewDamageDate = itemView.findViewById(R.id.tv_damage_report_date);
             textViewDamageType = itemView.findViewById(R.id.tv_damage_report_type);
             textViewDamageAddress = itemView.findViewById(R.id.tv_damage_report_address);
             textViewDamageDescription = itemView.findViewById(R.id.tv_damage_report_description);
-
+            textViewDamageDate = itemView.findViewById(R.id.tv_damage_report_date);
+            textViewReportNo = itemView.findViewById(R.id.tv_report_no);
+            textViewReportTriangleBg = itemView.findViewById(R.id.tv_triangle_corner);
             mOnDamageListener = onDamageListener;
 
             itemView.setOnClickListener(this);
-
         }
 
         @Override

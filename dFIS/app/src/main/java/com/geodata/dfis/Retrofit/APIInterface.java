@@ -26,5 +26,4 @@ public interface APIInterface {
                                      @Field("yCoordinate") String ycoor,
                                      @Field("imageString") String imagestring,
                                      @Field("dateAndTime") String dateandtime);
-
 }

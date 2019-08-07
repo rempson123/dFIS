@@ -3,8 +3,10 @@ package com.geodata.dfis.Fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -27,6 +29,7 @@ public class DraftsFragment extends android.support.v4.app.Fragment implements D
 
     private List<DamageReport> mDamageReportsDraft = new ArrayList<>();
     private DamageReportAdapter damageReportAdapter;
+
 
     public DraftsFragment() {
         // Required empty public constructor
@@ -72,4 +75,5 @@ public class DraftsFragment extends android.support.v4.app.Fragment implements D
         recyclerViewDamageReportDraft.setAdapter(damageReportAdapter);
 
     }
+
 }

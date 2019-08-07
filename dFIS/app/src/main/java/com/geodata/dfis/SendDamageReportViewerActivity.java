@@ -67,6 +67,7 @@ public class SendDamageReportViewerActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(SendDamageReportViewerActivity.this, MyReportsActivity.class);
+        intent.putExtra("sentTabFragment", "sentTab");
         startActivity(intent);
         finish();
     }
