@@ -153,6 +153,4 @@ public class RegisterInfo {
         this.Province = province;
     }
 
-
-
 }

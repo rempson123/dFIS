@@ -1,11 +1,15 @@
 package com.geodata.dfis.Retrofit;
 
 
+import com.geodata.dfis.Model.DamageReport;
+import com.geodata.dfis.Model.DamageReportAPI;
 import com.geodata.dfis.Model.RegisterInfo;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 /**
@@ -26,4 +30,8 @@ public interface APIInterface {
                                      @Field("yCoordinate") String ycoor,
                                      @Field("imageString") String imagestring,
                                      @Field("dateAndTime") String dateandtime);
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Damage/")
+    Call<DamageReportAPI> postDamageReportData (@Body DamageReportAPI damageReportAPI);
 }

@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.geodata.dfis.Model.DamageReport;
-import com.geodata.dfis.Model.RegisterInfo;
+import com.geodata.dfis.Model.DamageReportAPI;
 import com.geodata.dfis.Retrofit.APIIClient;
 import com.geodata.dfis.Retrofit.APIInterface;
 
@@ -50,7 +50,7 @@ public class ReportDamageActivity extends AppCompatActivity {
 
         setTitle("Create Report");
 
-        if (getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
@@ -101,7 +101,6 @@ public class ReportDamageActivity extends AppCompatActivity {
             Intent intent = new Intent(ReportDamageActivity.this, NavigationDrawerActivity.class);
             startActivity(intent);
             finishAffinity();
-
         }
     }
 
@@ -113,8 +112,6 @@ public class ReportDamageActivity extends AppCompatActivity {
         byte[] bArray = bos.toByteArray();
         String imageString = Base64.encodeToString(bArray, Base64.DEFAULT);
 
-        //Toast.makeText(this, imageString, Toast.LENGTH_SHORT).show();
-
         String fullname1 = txtview_name.getText().toString().trim();
         String damageid1 = damage_id.getText().toString().trim();
         String damagetype1 = damage_type.getText().toString().trim();
@@ -125,41 +122,55 @@ public class ReportDamageActivity extends AppCompatActivity {
         String ycoor1 = longi;
         String dateandtime1 = tv_date.getText().toString().trim();
 
-        sendReport(fullname1, damageid1, damagetype1, contactno1, description1, address1, xcoor1, ycoor1, imageString, dateandtime1);
-
         DamageReport damageReport = new DamageReport();
 
-        damageReport.setFullName(txtview_name.getText().toString().trim());
-        damageReport.setDamageId(damage_id.getText().toString().trim());
-        damageReport.setDamageType(damage_type.getText().toString().trim());
-        damageReport.setContactNo(contact_num.getText().toString().trim());
-        damageReport.setDescription(edit_desc.getText().toString().trim());
+        damageReport.setFullName(fullname1);
+        damageReport.setDamageId(damageid1);
+        damageReport.setDamageType(damagetype1);
+        damageReport.setContactNo(contactno1);
+        damageReport.setDescription(description1);
         damageReport.setStatus("SENT");
-        damageReport.setAddress(address.getText().toString().trim());
-        damageReport.setXCoordinates(lati);
-        damageReport.setYCoordinates(longi);
+        damageReport.setAddress(address1);
+        damageReport.setXCoordinates(xcoor1);
+        damageReport.setYCoordinates(ycoor1);
         damageReport.setImagePic(bArray);
         damageReport.setImageString(imageString);
-        damageReport.setDateAndTime(tv_date.getText().toString().trim());
+        damageReport.setDateAndTime(dateandtime1);
+
+        DamageReportAPI damageReportAPI = new DamageReportAPI();
+
+        damageReportAPI.setFullName(fullname1);
+        damageReportAPI.setDamageId(damageid1);
+        damageReportAPI.setDamageType(damagetype1);
+        damageReportAPI.setContactNo(contactno1);
+        damageReportAPI.setDescription(description1);
+        damageReportAPI.setStatus("SENT");
+        damageReportAPI.setAddress(address1);
+        damageReportAPI.setXCoordinates(xcoor1);
+        damageReportAPI.setYCoordinates(ycoor1);
+        damageReportAPI.setImageString(imageString);
+        damageReportAPI.setDateAndTime(dateandtime1);
+
+        sendReport(damageReportAPI);
 
         LoginActivity.myRoomDatabase.daoDFIS().addDamageRecord(damageReport);
-        Toast.makeText(this, "Report successfully sent", Toast.LENGTH_SHORT).show();
 
     }
 
-    public void sendReport(String fullname1, String damageid1, String damagetype1, String contactno1,
-                           String description1, String address1, String xcoor1, String ycoor1, String imageString, String dateandtime1) {
-        apiInterface.createReports(fullname1, damageid1, damagetype1, contactno1,
-                description1, address1, xcoor1, ycoor1, imageString, dateandtime1).enqueue(new Callback<RegisterInfo>() {
+    public void sendReport(DamageReportAPI damageReportAPI) {
+        apiInterface.postDamageReportData(damageReportAPI).enqueue(new Callback<DamageReportAPI>() {
             @Override
-            public void onResponse(Call<RegisterInfo> call, Response<RegisterInfo> response) {
-                //Toast.makeText(ReportDamageActivity.this, "Success", Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<DamageReportAPI> call, Response<DamageReportAPI> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(ReportDamageActivity.this, "Report successfully sent", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(ReportDamageActivity.this, "Report not sent", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onFailure(Call<RegisterInfo> call, Throwable t) {
-                //Toast.makeText(ReportDamageActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-
+            public void onFailure(Call<DamageReportAPI> call, Throwable t) {
+                Toast.makeText(ReportDamageActivity.this, "Report not sent", Toast.LENGTH_SHORT).show();
             }
         });
     }
